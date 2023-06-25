@@ -1,24 +1,25 @@
 import React from "react";
-import './App.css';
-import { BrowserRouter, Routes, Route  } from "react-router-dom";
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Produtos } from "./Components/Produtos";
 import { Header } from "./Components/Header";
 import { Footer } from "./Components/Footer";
 import { Contato } from "./Components/Contato";
-
+import { Produto } from "./Components/Produto";
 
 function App() {
   return (
-    <div className="App">    
+    <div className="App">
       <BrowserRouter>
-        <Header/>
+        <Header />
         <div className="content">
           <Routes>
-            <Route path="/" element={<Produtos />}/>
-            <Route path="/contato" element={<Contato />}/>
-          </Routes>           
+            <Route path="/" element={<Produtos />} />
+            <Route path="produto/:id" element={<Produto />} />
+            <Route path="contato" element={<Contato />} />
+          </Routes>
         </div>
-        <Footer /> 
+        <Footer />
       </BrowserRouter>
     </div>
   );
